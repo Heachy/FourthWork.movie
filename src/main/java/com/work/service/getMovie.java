@@ -103,7 +103,7 @@ public class getMovie {
         baseDao.release(conn, st, rs);
     }
 
-    public ArrayList<movie> reamMovie() throws Exception{
+    public ArrayList<movie> readMovie() throws Exception{
 
         BaseDao baseDao=new BaseDao();
 

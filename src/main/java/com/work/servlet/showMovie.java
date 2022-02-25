@@ -19,7 +19,7 @@ public class showMovie extends HttpServlet {
         getMovie gm = new getMovie();
         try {
             gm.saveMovie();
-            ArrayList<movie> movies=gm.reamMovie();
+            ArrayList<movie> movies=gm.readMovie();
 
 
             PrintWriter out = resp.getWriter();
