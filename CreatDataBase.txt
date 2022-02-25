@@ -1,0 +1,15 @@
+`movie`CREATE DATABASE movie CHARACTER SET utf8 COLLATE utf8_general_ci
+
+CREATE TABLE `movie_list`(
+`id` INT NOT NULL AUTO_INCREMENT COMMENT '序号',
+`file_title` VARCHAR(100) NOT NULL COMMENT '电影名',
+`cover_picture` VARCHAR(200) NOT NULL COMMENT '电影封面',
+`type` VARCHAR(50) NOT NULL COMMENT '类型',
+`release_time` VARCHAR(30) NOT NULL COMMENT '上映时间',
+`score` VARCHAR(20) NOT NULL COMMENT '评分',
+`nationality` VARCHAR(20) NOT NULL COMMENT '国籍',
+`duration` VARCHAR(20) NOT NULL COMMENT '时长',
+`director_name` VARCHAR(20) NOT NULL COMMENT '导演名',
+`director_picture` VARCHAR(200) NOT NULL COMMENT '导演图片',
+PRIMARY KEY(`id`)
+)ENGINE=INNODB DEFAULT CHARSET=utf8;
