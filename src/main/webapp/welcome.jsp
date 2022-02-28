@@ -1,4 +1,4 @@
-
+<%--简易的写一下欢迎页面--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">

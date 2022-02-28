@@ -13,12 +13,16 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-public class getMovie {
 
+public class setMovie {
 
+//从网页中获得movie并存放到数据库中
     public void saveMovie() throws Exception{
+
+        //设置url
         String url = "https://ssr1.scrape.center";
 
+        //先对数据库中有无movie进行判断，如果有了，无需再次爬取
         BaseDao baseDao=new BaseDao();
 
         Connection conn = baseDao.getConnection();
@@ -38,6 +42,7 @@ public class getMovie {
         }
 
         if(amount!=100) {
+            //爬取数据
             for (int i = 1; i <= 10; i++) {
 
                 Document document = Jsoup.parse(new URL(url + "/page/" + i), 100000);
@@ -103,6 +108,7 @@ public class getMovie {
         baseDao.release(conn, st, rs);
     }
 
+    //从数据库中获得movie的数据，并以ArrayList的形式返回所有movie
     public ArrayList<movie> readMovie() throws Exception{
 
         BaseDao baseDao=new BaseDao();

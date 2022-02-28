@@ -1,7 +1,7 @@
 package com.work.servlet;
 
 import com.work.pojo.movie;
-import com.work.service.getMovie;
+import com.work.service.setMovie;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -15,23 +15,35 @@ public class showMovie extends HttpServlet {
     @Override
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        //设置编码
         resp.setContentType("text/html;charset=utf-8");
-        getMovie gm = new getMovie();
+
+        //简易地编写一个展示的web页面用来展示所有电影
+        setMovie gm = new setMovie();
         try {
             gm.saveMovie();
+
             ArrayList<movie> movies=gm.readMovie();
 
-
             PrintWriter out = resp.getWriter();
+
             out.println("<html>");
+
             out.println("<head>");
+
             out.println("<title>第四轮作业</title>");
+
             out.println("</head>");
+
             out.println("<body>");
 
             out.println("<h1 align=\"center\" name=top>推荐电影</h1>");
+
             int i=1;
+
             for(movie movie:movies){
+
                 out.println("<hr/>");
 
                 out.println("<h2 align=\"center\">第"+i+"部："+movie.getFileTitle()+"</h2>");

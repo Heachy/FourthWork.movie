@@ -1,14 +1,24 @@
 package com.work.pojo;
 
 public class movie {
+    //创建movie的实体类
+
     private  String fileTitle;
+
     private  String coverPicture;
+
     private  String type;
+
     private  String releaseTime;
+
     private  String score;
+
     private  String nationality;
+
     private  String duration;
+
     private  String directorName;
+
     private  String directorPicture;
 
     public String getFileTitle() {
